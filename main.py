@@ -10,7 +10,9 @@ from app.models import user, product  # noqa: F401
 
 # Crear tablas automáticamente (en producción usa Alembic)
 if settings.APP_ENV != "testing":
-    Base.metadata.create_all(bind=engine)app = FastAPI(
+    Base.metadata.create_all(bind=engine)
+
+app = FastAPI(
     title=settings.APP_TITLE,
     version=settings.APP_VERSION,
     docs_url="/docs",
@@ -20,7 +22,7 @@ if settings.APP_ENV != "testing":
 # CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],        # En producción: lista dominios específicos
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
