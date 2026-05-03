@@ -7,7 +7,7 @@ from app.schemas.product import ProductCreate, ProductUpdate
 
 
 def get_products(db: Session, skip: int = 0, limit: int = 20) -> list[Product]:
-    return db.query(Product).filter(Product.is_active == True).offset(skip).limit(limit).all()
+    return db.query(Product).filter(Product.is_active.is_(True)).offset(skip).limit(limit).all()
 
 
 def get_product_by_id(db: Session, product_id: int) -> Product:
