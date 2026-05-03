@@ -9,9 +9,8 @@ from app.db.session import engine, Base
 from app.models import user, product  # noqa: F401
 
 # Crear tablas automáticamente (en producción usa Alembic)
-Base.metadata.create_all(bind=engine)
-
-app = FastAPI(
+if settings.APP_ENV != "testing":
+    Base.metadata.create_all(bind=engine)app = FastAPI(
     title=settings.APP_TITLE,
     version=settings.APP_VERSION,
     docs_url="/docs",
