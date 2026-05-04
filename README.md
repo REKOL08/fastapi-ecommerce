@@ -140,4 +140,4 @@ Los tests usan SQLite en memoria, no requieren MySQL.
 
 ## 📄 Licencia
 
-MIT © 2026
+MIT © 2026 
