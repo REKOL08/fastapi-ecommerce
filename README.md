@@ -1,137 +1,294 @@
-# 🛒 FastAPI E-Commerce API
+# \# 🛒 FastAPI E-Commerce API
 
-API REST completa con autenticación JWT, gestión de usuarios y productos. Construida con **Python + FastAPI + MySQL**.
+# 
 
-![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat&logo=fastapi)
-![MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat&logo=mysql&logoColor=white)
-![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=flat&logo=jsonwebtokens)
-![License](https://img.shields.io/badge/License-MIT-green)
+# API REST completa con autenticación JWT, gestión de usuarios y productos. Construida con Python + FastAPI + MySQL.
 
----
+# 
 
-## ✨ Features
+# !\[Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat\&logo=python\&logoColor=white)
 
-- ✅ Registro y login con **JWT Bearer Token**
-- ✅ Roles: `admin` y `customer` con control de acceso por endpoint
-- ✅ CRUD completo de **usuarios** y **productos**
-- ✅ Validaciones con **Pydantic v2**
-- ✅ Documentación interactiva en `/docs` (Swagger UI)
-- ✅ Tests unitarios con **pytest** usando SQLite en memoria
-- ✅ Arquitectura por capas: models → schemas → services → endpoints
+# !\[FastAPI](https://img.shields.io/badge/FastAPI-0.111-009688?style=flat\&logo=fastapi)
 
----
+# !\[MySQL](https://img.shields.io/badge/MySQL-8.0+-4479A1?style=flat\&logo=mysql\&logoColor=white)
 
-## 🏗️ Estructura del proyecto
+# !\[JWT](https://img.shields.io/badge/Auth-JWT-000000?style=flat\&logo=jsonwebtokens)
 
-```
-fastapi-ecommerce/
-├── app/
-│   ├── api/v1/
-│   │   ├── endpoints/
-│   │   │   ├── auth.py        # POST /register, /login
-│   │   │   ├── users.py       # CRUD usuarios
-│   │   │   └── products.py    # CRUD productos
-│   │   └── router.py
-│   ├── core/
-│   │   ├── config.py          # Settings (pydantic-settings)
-│   │   ├── security.py        # JWT + bcrypt
-│   │   └── deps.py            # Dependencias de autenticación
-│   ├── db/
-│   │   └── session.py         # SQLAlchemy engine + Base
-│   ├── models/
-│   │   ├── user.py
-│   │   └── product.py
-│   ├── schemas/
-│   │   ├── user.py
-│   │   └── product.py
-│   └── services/
-│       ├── user_service.py
-│       └── product_service.py
-├── tests/
-│   └── test_auth.py
-├── main.py
-├── requirements.txt
-└── .env.example
-```
+# !\[Railway](https://img.shields.io/badge/Deploy-Railway-0B0D0E?style=flat\&logo=railway)
 
----
+# !\[License](https://img.shields.io/badge/License-MIT-green)
 
-## 🚀 Instalación y uso
+# 
 
-### 1. Clonar y crear entorno virtual
+# \---
 
-```bash
-git clone https://github.com/tu-usuario/fastapi-ecommerce.git
-cd fastapi-ecommerce
-python -m venv .venv
-source .venv/bin/activate        # Linux/Mac
-.venv\Scripts\activate           # Windows
-pip install -r requirements.txt
-```
+# 
 
-### 2. Configurar variables de entorno
+# \## 🌐 Demo en vivo
 
-```bash
-cp .env.example .env
-# Edita .env con tus credenciales de MySQL
-```
+# 
 
-### 3. Crear la base de datos en MySQL
+# \*\*➡️ \[https://fastapi-ecommerce-production-3f77.up.railway.app/docs](https://fastapi-ecommerce-production-3f77.up.railway.app/docs)\*\*
 
-```sql
-CREATE DATABASE ecommerce_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-```
+# 
 
-### 4. Levantar el servidor
+# > Puedes probar todos los endpoints directamente desde el navegador sin instalar nada.
 
-```bash
-uvicorn main:app --reload
-```
+# 
 
-Abre **http://localhost:8000/docs** para explorar la API.
+# \---
 
----
+# 
 
-## 🔑 Endpoints principales
+# \## ✨ Features
 
-| Método | Ruta | Auth | Descripción |
-|--------|------|------|-------------|
-| POST | `/api/v1/auth/register` | ❌ | Registrar usuario |
-| POST | `/api/v1/auth/login` | ❌ | Login → obtiene JWT |
-| GET | `/api/v1/users/me` | ✅ | Perfil actual |
-| GET | `/api/v1/users/` | 🔐 Admin | Listar usuarios |
-| GET | `/api/v1/products/` | ❌ | Listar productos |
-| POST | `/api/v1/products/` | 🔐 Admin | Crear producto |
-| PATCH | `/api/v1/products/{id}` | ✅ | Actualizar producto |
-| DELETE | `/api/v1/products/{id}` | ✅ | Eliminar producto |
+# 
 
----
+# ✅ Registro y login con JWT Bearer Token  
 
-## 🧪 Tests
+# ✅ Roles: `admin` y `customer` con control de acceso por endpoint  
 
-```bash
-pytest tests/ -v
-```
+# ✅ CRUD completo de usuarios y productos  
 
-Los tests usan **SQLite en memoria**, no requieren MySQL.
+# ✅ Validaciones con Pydantic v2  
 
----
+# ✅ Documentación interactiva en `/docs` (Swagger UI)  
 
-## 🛠️ Stack tecnológico
+# ✅ Tests unitarios con pytest usando SQLite en memoria  
 
-| Herramienta | Uso |
-|-------------|-----|
-| FastAPI | Framework web async |
-| SQLAlchemy 2.0 | ORM |
-| PyMySQL | Driver MySQL |
-| python-jose | Generación/validación JWT |
-| passlib + bcrypt | Hash de contraseñas |
-| Pydantic v2 | Validación y serialización |
-| pytest + httpx | Testing |
+# ✅ Arquitectura por capas: models → schemas → services → endpoints  
 
----
+# 
 
-## 📄 Licencia
+# \---
 
-MIT © 2026
+# 
+
+# \## 🏗️ Estructura del proyecto
+
+# 
+
+# ```
+
+# fastapi-ecommerce/
+
+# ├── app/
+
+# │   ├── api/v1/
+
+# │   │   ├── endpoints/
+
+# │   │   │   ├── auth.py        # POST /register, /login
+
+# │   │   │   ├── users.py       # CRUD usuarios
+
+# │   │   │   └── products.py    # CRUD productos
+
+# │   │   └── router.py
+
+# │   ├── core/
+
+# │   │   ├── config.py          # Settings (pydantic-settings)
+
+# │   │   ├── security.py        # JWT + bcrypt
+
+# │   │   └── deps.py            # Dependencias de autenticación
+
+# │   ├── db/
+
+# │   │   └── session.py         # SQLAlchemy engine + Base
+
+# │   ├── models/
+
+# │   │   ├── user.py
+
+# │   │   └── product.py
+
+# │   ├── schemas/
+
+# │   │   ├── user.py
+
+# │   │   └── product.py
+
+# │   └── services/
+
+# │       ├── user\_service.py
+
+# │       └── product\_service.py
+
+# ├── tests/
+
+# │   └── test\_auth.py
+
+# ├── main.py
+
+# ├── requirements.txt
+
+# └── .env.example
+
+# ```
+
+# 
+
+# \---
+
+# 
+
+# \## 🚀 Instalación y uso
+
+# 
+
+# \### 1. Clonar y crear entorno virtual
+
+# 
+
+# ```bash
+
+# git clone https://github.com/REKOL08/fastapi-ecommerce.git
+
+# cd fastapi-ecommerce
+
+# python -m venv .venv
+
+# source .venv/bin/activate        # Linux/Mac
+
+# .venv\\Scripts\\activate           # Windows
+
+# pip install -r requirements.txt
+
+# ```
+
+# 
+
+# \### 2. Configurar variables de entorno
+
+# 
+
+# ```bash
+
+# cp .env.example .env
+
+# \# Edita .env con tus credenciales de MySQL
+
+# ```
+
+# 
+
+# \### 3. Crear la base de datos en MySQL
+
+# 
+
+# ```sql
+
+# CREATE DATABASE ecommerce\_db CHARACTER SET utf8mb4 COLLATE utf8mb4\_unicode\_ci;
+
+# ```
+
+# 
+
+# \### 4. Levantar el servidor
+
+# 
+
+# ```bash
+
+# uvicorn main:app --reload
+
+# ```
+
+# 
+
+# Abre http://localhost:8000/docs para explorar la API.
+
+# 
+
+# \---
+
+# 
+
+# \## 🔑 Endpoints principales
+
+# 
+
+# | Método | Ruta | Auth | Descripción |
+
+# |--------|------|------|-------------|
+
+# | POST | `/api/v1/auth/register` | ❌ | Registrar usuario |
+
+# | POST | `/api/v1/auth/login` | ❌ | Login → obtiene JWT |
+
+# | GET | `/api/v1/users/me` | ✅ | Perfil actual |
+
+# | GET | `/api/v1/users/` | 🔐 Admin | Listar usuarios |
+
+# | GET | `/api/v1/products/` | ❌ | Listar productos |
+
+# | POST | `/api/v1/products/` | 🔐 Admin | Crear producto |
+
+# | PATCH | `/api/v1/products/{id}` | ✅ | Actualizar producto |
+
+# | DELETE | `/api/v1/products/{id}` | ✅ | Eliminar producto |
+
+# 
+
+# \---
+
+# 
+
+# \## 🧪 Tests
+
+# 
+
+# ```bash
+
+# pytest tests/ -v
+
+# ```
+
+# 
+
+# Los tests usan SQLite en memoria, no requieren MySQL.
+
+# 
+
+# \---
+
+# 
+
+# \## 🛠️ Stack tecnológico
+
+# 
+
+# | Herramienta | Uso |
+
+# |-------------|-----|
+
+# | FastAPI | Framework web async |
+
+# | SQLAlchemy 2.0 | ORM |
+
+# | PyMySQL | Driver MySQL |
+
+# | python-jose | Generación/validación JWT |
+
+# | passlib + bcrypt | Hash de contraseñas |
+
+# | Pydantic v2 | Validación y serialización |
+
+# | pytest + httpx | Testing |
+
+# | Railway | Deploy en la nube |
+
+# 
+
+# \---
+
+# 
+
+# \## 📄 Licencia
+
+# 
+
+# MIT © 2026
+
