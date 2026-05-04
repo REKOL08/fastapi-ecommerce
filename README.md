@@ -32,6 +32,8 @@ API REST completa con autenticación JWT, gestión de usuarios y productos. Cons
 ---
 
 ## 🏗️ Estructura del proyecto
+
+```
 fastapi-ecommerce/
 ├── app/
 │   ├── api/v1/
