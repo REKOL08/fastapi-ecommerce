@@ -21,33 +21,31 @@ API REST completa con autenticación JWT, gestión de usuarios y productos. Cons
 
 ## ✨ Features
 
-✅ Registro y login con JWT Bearer Token  
-✅ Roles: `admin` y `customer` con control de acceso por endpoint  
-✅ CRUD completo de usuarios y productos  
-✅ Validaciones con Pydantic v2  
-✅ Documentación interactiva en `/docs` (Swagger UI)  
-✅ Tests unitarios con pytest usando SQLite en memoria  
-✅ Arquitectura por capas: models → schemas → services → endpoints  
+✅ Registro y login con JWT Bearer Token
+✅ Roles: `admin` y `customer` con control de acceso por endpoint
+✅ CRUD completo de usuarios y productos
+✅ Validaciones con Pydantic v2
+✅ Documentación interactiva en `/docs` (Swagger UI)
+✅ Tests unitarios con pytest usando SQLite en memoria
+✅ Arquitectura por capas: models → schemas → services → endpoints
 
 ---
 
 ## 🏗️ Estructura del proyecto
-
-```
 fastapi-ecommerce/
 ├── app/
 │   ├── api/v1/
 │   │   ├── endpoints/
-│   │   │   ├── auth.py        # POST /register, /login
-│   │   │   ├── users.py       # CRUD usuarios
-│   │   │   └── products.py    # CRUD productos
+│   │   │   ├── auth.py
+│   │   │   ├── users.py
+│   │   │   └── products.py
 │   │   └── router.py
 │   ├── core/
-│   │   ├── config.py          # Settings (pydantic-settings)
-│   │   ├── security.py        # JWT + bcrypt
-│   │   └── deps.py            # Dependencias de autenticación
+│   │   ├── config.py
+│   │   ├── security.py
+│   │   └── deps.py
 │   ├── db/
-│   │   └── session.py         # SQLAlchemy engine + Base
+│   │   └── session.py
 │   ├── models/
 │   │   ├── user.py
 │   │   └── product.py
@@ -62,7 +60,6 @@ fastapi-ecommerce/
 ├── main.py
 ├── requirements.txt
 └── .env.example
-```
 
 ---
 
@@ -74,8 +71,8 @@ fastapi-ecommerce/
 git clone https://github.com/REKOL08/fastapi-ecommerce.git
 cd fastapi-ecommerce
 python -m venv .venv
-source .venv/bin/activate        # Linux/Mac
-.venv\Scripts\activate           # Windows
+source .venv/bin/activate
+.venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
@@ -83,7 +80,6 @@ pip install -r requirements.txt
 
 ```bash
 cp .env.example .env
-# Edita .env con tus credenciales de MySQL
 ```
 
 ### 3. Crear la base de datos en MySQL
